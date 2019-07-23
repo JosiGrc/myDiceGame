@@ -34,16 +34,16 @@ numberOfEnemies();
 function weaponRoll(){
 	let weapons = ["Shotgun","SMG","LMG","Assault Rifle"];
 	let random = Math.floor(Math.random() * 3) + 0;
-		if (random = [0]){
+		if (random === 0){
 			console.log("You get a shotgun trusty in this situation.");
 		}
-		else if (weapons = [1]){
+		if (weapons === 1){
 			console.log("You got an SMG, careful with the recoil.");
 		}
-		else if (weapons = [2]){
+		if (weapons === 2){
 			console.log("Ah yes the LMG, not enough bad guys for the bullets your carrying.");
 		}
-		else (weapons = [3]){
+		if(weapons === 3){
 			console.log("A good balance of all weapons, an almost ensured victory.");
 		}
 }

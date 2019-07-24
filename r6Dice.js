@@ -134,32 +134,27 @@ travelDirection();
 
 
 
-function situationApproach(){
-	let situationApproach = prompt("How should be elimatge the enemies, sneaky beaky like or guns blazing?")
-
-	function unconcealedDamage(){
+function unconcealedDamage(){
+			let nonStealthDamage = Math.floor(Math.random() * 100) + 0;
+}
+function unconcealedDamage(){
 	let nonStealthDamage = Math.floor(Math.random() * 100) + 0;
 	return nonStealthDamage
 	}
-
+	function stealthDamage(nonStealthDamage){
+	let situationApproach = prompt("How should be elimatge the enemies, sneaky beaky like or guns blazing?")
+	let stealthDamageTaken = Math.floor(Math.random() * 50) + 0;
+	
 		if(situationApproach == "sneaky beaky like"){
-			function stealthDamage(){
-			let stealthDamageTaken = Math.floor(Math.random() * 50) + 0;
-			stealthDamage();
-			console.log("Enemies eliminated at the cost of " + stealthDamage)
+			console.log("Enemies eliminated at the cost of " + stealthDamage + " damage")
 			}
-		}
 
 		if (situationApproach == "guns blazing"){
-			function unconcealedDamage(){
-			let nonStealthDamage = Math.floor(Math.random() * 100) + 0;
-			unconcealedDamage();
 			console.log("They're done for but we took " + nonStealthDamage + " damage")
 			}
-		}
 }
-
-situationApproach();
+let thing = unconcealedDamage();
+stealthDamage(thing);
 
 
 

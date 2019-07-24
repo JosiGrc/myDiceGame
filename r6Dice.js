@@ -10,27 +10,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function numberOfEnemies(min, max){
-	let enemies = Math.floor(Math.random() * 50) + 1;   //Needs to be linked to a button 
-	console.log (enemies);
-}
-numberOfEnemies();
-
 function weaponRoll(){
 	let weapons = ["Shotgun","SMG","LMG","Assault Rifle"];
 	let random = Math.floor(Math.random() * 3) + 0;
@@ -51,6 +30,12 @@ function weaponRoll(){
 weaponRoll();
 
 
+function numberOfEnemies(min, max){
+	let enemies = Math.floor(Math.random() * 50) + 1;   //Needs to be linked to a button 
+	console.log (enemies);
+}
+numberOfEnemies();
+
 
 function numberOfPlayers(one, six){
 	let players = Math.floor(Math.random() * 6) + 1;  //Needs to be linked to a button
@@ -58,11 +43,25 @@ function numberOfPlayers(one, six){
 }
 numberOfPlayers();
 
+
 function numberOfEnemiesInRoom(){
 	let enemiesPresent = Math.floor(Math.random() * 10) + 1;
 	console.log(enemiesPresent);
 }
 numberOfEnemiesInRoom();
+
+
+function stealthDamage(){
+	let stealthDamageTaken = Math.floor(Math.random() * 30) + 0;
+	console.log(stealthDamageTaken);
+}
+stealthDamage();
+
+
+function unconcealedDamage(){
+	let nonStealthDamage = Math.floor(Math.random() * 100) + 0;
+}
+unconcealedDamage();
 
 // function whichWayPlayerGoes(){
 // 	let direction1 = left

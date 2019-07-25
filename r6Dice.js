@@ -66,6 +66,13 @@ numberOfEnemies();
 
 //Begin match button is pressed
 
+while (FunctionForEnemiesGone > 0){
+		travelDirection();
+		numberOfEnemiesInRoom();
+		situationDamage();
+		enemiesGone();
+
+
 function breachingLocation() {
 	let breachingLocation = prompt("Commander where do we begin basement, first floor, roof?");
 
@@ -156,17 +163,7 @@ function enemiesGone(){
 enemiesGone();
 
 
-while (remainingEnemies > 0){
-		travelDirection();
-		numberOfEnemiesInRoom();
-		situationDamage();
-		enemiesGone();
-
-
 }
-
-
-
 
 
 

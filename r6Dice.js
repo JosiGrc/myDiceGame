@@ -8,79 +8,68 @@
 //for which direction the player wants to take, each direction leading the player to a different 
 //room where theres a roll for how many enemies are in said room.
 // until either A) all enemies 
-//are defeated B)All players are defeated or C)Time runs out(the totsal time being 
-//20 minutes). 
+//are defeated B)All players are defeated. 
 
+// while (enemies > 1){
+// 	numberOfEnemiesInRoom(); travelDirection(); situationDamage();   //the while loop 
 
+//Master Function
 
+function LetsPlay(){
+	let functionForPlayers = numberOfPlayers();
+	let functionForGuns = weaponRoll();
+	let functionForTotalEnemies = numberOfEnemies;
+	let functionForRoomEnemies = numberOfEnemiesInRoom;
+	let functionForBreachLoc = breachingLocation();
+	let functionForTravelDirection = travelDirection();
+	let functionForSiteDamage = situationDamage();
+	let FunctionForEnemiesGone = enemiesGone();
+}
+LetsPlay();
 
+//Player rolls for additional help
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function numberOfPlayers(one, six){
-	let players = Math.floor(Math.random() * 6) + 1;
-	console.log( players + " players are helping you out in this mission");						  
+function numberOfPlayers(){
+	let numberOfPlayers = Math.floor(Math.random() * 6) + 0;
+	console.log( numberOfPlayers + " players are helping you out in this mission");						  
 }
 numberOfPlayers();
 
+//PLayer rolls for weapon
+
 function weaponRoll(){
 	let weapons = ["Shotgun","SMG","LMG","Assault Rifle"];
-	let random = Math.floor(Math.random() * 3) + 0;
-		if (random === 0){
+	let weaponRoll = Math.floor(Math.random() * 3) + 0;
+		if (weaponRoll === 0){
 			console.log("Ah yes the shotgun, trusty in this situation.");
 		}
-		if (random === 1){
+		if (weaponRoll === 1){
 			console.log("You got an SMG, shes a fast one.");
 		}
-		if (random === 2){
+		if (weaponRoll === 2){
 			console.log("The LMG, not enough bad guys for the bullets your carrying.");
 		}
-		if(random === 3){
+		if(weaponRoll === 3){
 			console.log("The Assault Rifle, a good balance of all weapons, an almost ensured victory.");
 		}
 }
-
 weaponRoll();
 
+//PLayer rolls for number of enemies in the game
 
-function numberOfEnemies(min, max){
-	let enemies = Math.floor(Math.random() * 50) + 1; 
-	console.log("There's " + enemies + " enemies in the building, take care of them");
+function numberOfEnemies(){
+	let numberOfEnemies = Math.floor(Math.random() * 60) + 1; 
+	console.log("There's " + numberOfEnemies + " enemies in the building, take care of them");
+	return numberOfEnemies;
 }
-numberOfEnemies()
+numberOfEnemies();
 
-function numberOfEnemiesInRoom(){
-	let enemiesPresent = Math.floor(Math.random() * 10) + 1;
-	console.log("There's " + enemiesPresent + " in the room commander." )
-}
-numberOfEnemiesInRoom();
+//Begin match button is pressed
 
-while (numberOfEnemies > 1){
-	travelDirection();
-}
+function breachingLocation() {
+	let breachingLocation = prompt("Commander where do we begin basement, first floor, roof?");
 
-
-
-function breachingLocation(door, window, wall) {
-	let beginGame = prompt("Commander where do we begin basement, first floor, roof?");
-
-	switch(beginGame){
+	switch(breachingLocation){
 	case "basement":
 		console.log("Roger, moving to basement");
 		break;
@@ -95,13 +84,13 @@ function breachingLocation(door, window, wall) {
 		break;
 	}
 
-	if(beginGame == "basement"){
+	if(breachingLocation == "basement"){
 		console.log("Breaching basement door in 3,2,1");
 	}
-	if(beginGame == "first floor"){
+	if(breachingLocation == "first floor"){
 			let breachLocal = prompt("Where do we breach through Commander. Door, window or wall?");
 	}
-	if(beginGame == "roof"){
+	if(breachingLocation == "roof"){
 		console.log("Breaching roof hatch in 3,2,1");
 	}
 }
@@ -111,11 +100,10 @@ console.log("We're in.")
 
 
 
-
-function travelDirection (){
-	let movingDirection = prompt("Commander which direction do we go to first? left, foward or right")
+function travelDirection(){
+	let travelDirection = prompt("Commander which direction do we go to first? left, foward or right")
 	
-	switch(movingDirection){
+	switch(travelDirection){
 		case "left":
 		console.log("Roger that turning left.");
 		break;
@@ -133,32 +121,49 @@ function travelDirection (){
 travelDirection();
 
 
-
-function unconcealedDamage(){
-			let nonStealthDamage = Math.floor(Math.random() * 100) + 0;
+function numberOfEnemiesInRoom(){
+	let numberOfEnemiesInRoom = Math.floor(Math.random() * 10) + 1;
+	console.log("There's " + numberOfEnemiesInRoom + " in the room commander." )
+	return numberOfEnemiesInRoom;
 }
-function unconcealedDamage(){
-	let nonStealthDamage = Math.floor(Math.random() * 100) + 0;
-	return nonStealthDamage
-	}
-	function stealthDamage(nonStealthDamage){
+numberOfEnemiesInRoom();
+
+
+function situationDamage(){
 	let situationApproach = prompt("How should be elimatge the enemies, sneaky beaky like or guns blazing?")
 	let stealthDamageTaken = Math.floor(Math.random() * 50) + 0;
+	let nonStealthDamage = Math.floor(Math.random() * 100) + 0;
 	
 		if(situationApproach == "sneaky beaky like"){
-			console.log("Enemies eliminated at the cost of " + stealthDamage + " damage")
+			console.log("Enemies eliminated at the cost of " + stealthDamageTaken + " damage")
 			}
 
 		if (situationApproach == "guns blazing"){
 			console.log("They're done for but we took " + nonStealthDamage + " damage")
 			}
 }
-let thing = unconcealedDamage();
-stealthDamage(thing);
+
+situationDamage();
 
 
+function enemiesGone(){
+		let remainingEnemies = numberOfEnemies - numberOfEnemiesInRoom
+		if (remainingEnemies  == 0){
+			console.log("It's a win, all enemies defeated")
+		}
+		console.log("Only " + remainingEnemies + " enemies remain.")
+}
+enemiesGone();
 
 
+while (remainingEnemies > 0){
+		travelDirection();
+		numberOfEnemiesInRoom();
+		situationDamage();
+		enemiesGone();
+
+
+}
 
 
 

@@ -18,8 +18,9 @@
 function LetsPlay(){
 	let functionForPlayers = numberOfPlayers();
 	let functionForGuns = weaponRoll();
-	let functionForTotalEnemies = numberOfEnemies;
-	let functionForRoomEnemies = numberOfEnemiesInRoom;
+	let functionForTotalEnemies = numberOfEnemies();
+	let functionToEnterTheBuilding = initialBreach();
+	let functionForRoomEnemies = numberOfEnemiesInRoom(); //This fucntion is not defined
 	let functionForBreachLoc = breachingLocation();
 	let functionForTravelDirection = travelDirection();
 	let functionForSiteDamage = situationDamage();
@@ -59,12 +60,16 @@ weaponRoll();
 
 function numberOfEnemies(){
 	let numberOfEnemies = Math.floor(Math.random() * 60) + 1; 
-	console.log("There's " + numberOfEnemies + " enemies in the building, take care of them");
+	console.log("There's " + numberOfEnemies + " enemies in the building, take care of them.");
 	return numberOfEnemies;
 }
 numberOfEnemies();
 
 //Begin match button is pressed
+
+// function playingTheGame(){
+
+// }
 
 while (FunctionForEnemiesGone > 0){
 		travelDirection();
@@ -73,7 +78,8 @@ while (FunctionForEnemiesGone > 0){
 		enemiesGone();
 
 
-function breachingLocation() {
+
+function initialBreach() {
 	let breachingLocation = prompt("Commander where do we begin basement, first floor, roof?");
 
 	switch(breachingLocation){
@@ -95,15 +101,16 @@ function breachingLocation() {
 		console.log("Breaching basement door in 3,2,1");
 	}
 	if(breachingLocation == "first floor"){
-			let breachLocal = prompt("Where do we breach through Commander. Door, window or wall?");
+			let breachLocal = prompt("Roger breaching main door in 3,2,1");
 	}
 	if(breachingLocation == "roof"){
 		console.log("Breaching roof hatch in 3,2,1");
 	}
+	return console.log("We're in.");
 }
 
-breachingLocation();
-console.log("We're in.")
+initialBreach();
+console.log("We're in.");
 
 
 
@@ -130,7 +137,7 @@ travelDirection();
 
 function numberOfEnemiesInRoom(){
 	let numberOfEnemiesInRoom = Math.floor(Math.random() * 10) + 1;
-	console.log("There's " + numberOfEnemiesInRoom + " in the room commander." )
+	console.log("There's " + numberOfEnemiesInRoom + " in the room commander." );
 	return numberOfEnemiesInRoom;
 }
 numberOfEnemiesInRoom();

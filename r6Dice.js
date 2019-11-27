@@ -31,7 +31,7 @@ function numberOfPlayers(){
 //PLayer rolls for weapon
 function weaponRoll(){
 	let weapons = ["Shotgun","SMG","LMG","Assault Rifle"];
-	let weaponRoll = Math.floor(Math.random() * 3) + 0;
+	let weaponRoll = Math.floor(Math.random() * 4) + 0;
 		if (weaponRoll === 0){
 			console.log("Ah yes the shotgun, trusty in this situation.");
 		}
@@ -57,25 +57,25 @@ function numberOfEnemies(){
 // numberOfEnemies();
 
 // function LetsPlay(){
-// 	let functionForRoomEnemies = numberOfEnemiesInRoom(); //This fucntion is not defined
-// 	let functionForTravelDirection = travelDirection();
-// 	let functionForSiteDamage = situationDamage();
-// 	let FunctionForEnemiesGone = enemiesGone();
+// 	numberOfEnemiesInRoom(); 
+// 	travelDirection();
+// 	situationDamage();
+// 	enemiesGone();
 // }
+
 // LetsPlay();
 
 //Begin match button is pressed
 
-// function playingTheGame(){
+function playingTheGame(){
 
-// }
-
-// while (numberOfEnemies > 0){
-// 	travelDirection();
-// 	numberOfEnemiesInRoom();
-// 	situationDamage();
-// 	enemiesGone();
-// }
+	for (let i = 0; numberOfEnemies < 0; i++){
+	travelDirection();
+	numberOfEnemiesInRoom();
+	situationDamage();
+	enemiesGone();
+	}
+}
 
 function travelDirection(){
 	let travelDirection = prompt("Commander which direction do we go to first? left, foward or right")
@@ -95,7 +95,6 @@ function travelDirection(){
 		break;
 	}
 }
-// travelDirection();
 
 
 function numberOfEnemiesInRoom(){
@@ -103,7 +102,6 @@ function numberOfEnemiesInRoom(){
 	console.log("There's " + numberOfEnemiesInRoom + " enemies in the room commander." );
 	return numberOfEnemiesInRoom;
 }
-// numberOfEnemiesInRoom();
 
 
 function situationDamage(){
@@ -120,53 +118,14 @@ function situationDamage(){
 			}
 }
 
-// situationDamage();
-
 
 function enemiesGone(){
-		let remainingEnemies = numberOfEnemies - numberOfEnemiesInRoom
-		if (remainingEnemies  == 0){
+		numberOfEnemies - numberOfEnemiesInRoom
+		if (numberOfEnemies  == 0){
 			console.log("It's a win, all enemies defeated")
 		}
-		console.log("Only " + remainingEnemies + " enemies remain.")
+		console.log("Only " + numberOfEnemies + " enemies remain.")
 }
-// enemiesGone();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

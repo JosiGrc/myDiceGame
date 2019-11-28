@@ -15,11 +15,14 @@
 
 //Master Function
 
+$(document).ready(function(){
+  $("p").click(function(){
+    $(this).hide();
+  });
+});
 
-function currentSituation(){
-	numberOfPlayers();
-	numberOfEnemies();
-}
+
+
 
 //Player rolls for additional help
 function numberOfPlayers(){
@@ -119,8 +122,6 @@ function enemiesGone(){
 }
 
 
-function breachingLocation() {
-
 function initialBreach() {
 	let breachingLocation = prompt("Commander where do we begin basement, first floor, roof?");
 
@@ -149,3 +150,5 @@ function initialBreach() {
 	}
 	return console.log("We're in.");
 }
+
+

@@ -26,8 +26,8 @@ $(document).ready(function(){
 
 //Player rolls for additional help
 function numberOfPlayers(){
-	let numberOfPlayers = Math.floor(Math.random() * 6) + 0;
-	console.log( numberOfPlayers + " players are helping you out in this mission");						  
+	let NumberOfPlayers = Math.floor(Math.random() * 6) + 0;
+	console.log( NumberOfPlayers + " players are helping you out in this mission");						  
 }
 // numberOfPlayers();
 
@@ -48,28 +48,32 @@ function weaponRoll(){
 			console.log("The Assault Rifle, a good balance of all weapons, an almost ensured victory.");
 		}
 }
-// weaponRoll();
 
 //PLayer rolls for number of enemies in the game
 
 function numberOfEnemies(){
-	let numberOfEnemies = Math.floor(Math.random() * 60) + 1; 
-	console.log("There's " + numberOfEnemies + " enemies in the building, take care of them.");
-	return numberOfEnemies;
+	let NumberOfEnemies = Math.floor(Math.random() * 60) + 1; 
+	console.log("There's " + NumberOfEnemies + " enemies in the building, take care of them.");
+	return NumberOfEnemies;
 }
 
 //Begin match button is pressed
 
-// function playingTheGame(){
+function playingTheGame(NumberOfEnemies, NumberOfEnemiesInRoom){
 
-// 	for (let i = 0; numberOfEnemies > 0; i++){
-// 	travelDirection();
-// 	numberOfEnemiesInRoom();
-// 	situationDamage();
-// 	enemiesGone();
-// 	}
-// }
-// playingTheGame();
+	NumberOfEnemies = NumberOfEnemies- NumberOfEnemiesInRoom
+		if (NumberOfEnemies  == 0){
+			console.log("It's a win, all enemies defeated");
+		}
+		else if (NumberOfEnemies > 0){
+			console.log("Only " + NumberOfEnemies + " enemies remain.");
+		}
+		travelDirection();
+		numberOfEnemiesInRoom();
+		situationDamage();
+		playingTheGame();
+	
+}
 
 function travelDirection(){
 	let travelDirection = prompt("Commander which direction do we go to first? left, foward or right")
@@ -92,9 +96,9 @@ function travelDirection(){
 
 
 function numberOfEnemiesInRoom(){
-	let numberOfEnemiesInRoom = Math.floor(Math.random() * 10) + 1;
-	console.log("There's " + numberOfEnemiesInRoom + " enemies in the room commander." );
-	return numberOfEnemiesInRoom;
+	let NumberOfEnemiesInRoom = Math.floor(Math.random() * 10) + 1;
+	console.log("There's " + NumberOfEnemiesInRoom + " enemies in the room commander." );
+	return NumberOfEnemiesInRoom;
 }
 
 
@@ -113,12 +117,14 @@ function situationDamage(){
 }
 
 
-function enemiesGone(){
-		numberOfEnemies - numberOfEnemiesInRoom
-		if (numberOfEnemies  == 0){
-			console.log("It's a win, all enemies defeated")
+function enemiesGone(NumberOfEnemies, NumberOfEnemiesInRoom){
+		NumberOfEnemies = NumberOfEnemies- NumberOfEnemiesInRoom
+		if (NumberOfEnemies  == 0){
+			console.log("It's a win, all enemies defeated");
 		}
-		console.log("Only " + numberOfEnemies + " enemies remain.")
+		else if (NumberOfEnemies > 0){
+			console.log("Only " + NumberOfEnemies + " enemies remain.");
+		}
 }
 
 
@@ -150,5 +156,14 @@ function initialBreach() {
 	}
 	return console.log("We're in.");
 }
+
+
+
+
+
+
+
+
+
 
 

@@ -59,19 +59,19 @@ function numberOfEnemies(){
 
 //Begin match button is pressed
 
-function playingTheGame(NumberOfEnemies, NumberOfEnemiesInRoom){
+function playingTheGame(NumberOfEnemies){
 
-	NumberOfEnemies = NumberOfEnemies- NumberOfEnemiesInRoom
-		if (NumberOfEnemies  == 0){
-			console.log("It's a win, all enemies defeated");
-		}
-		else if (NumberOfEnemies > 0){
-			console.log("Only " + NumberOfEnemies + " enemies remain.");
-		}
 		travelDirection();
 		numberOfEnemiesInRoom();
-		situationDamage();
-		playingTheGame();
+		// situationDamage();
+		remainingEnemies();
+
+		if (NumberOfEnemies > 0){
+			playingTheGame();
+		}
+		else{
+			console.log("Congratulations you won.")
+		}
 	
 }
 
@@ -117,7 +117,8 @@ function situationDamage(){
 }
 
 
-function enemiesGone(NumberOfEnemies, NumberOfEnemiesInRoom){
+function remainingEnemies(NumberOfEnemies, NumberOfEnemiesInRoom){
+
 		NumberOfEnemies = NumberOfEnemies- NumberOfEnemiesInRoom
 		if (NumberOfEnemies  == 0){
 			console.log("It's a win, all enemies defeated");
@@ -125,6 +126,8 @@ function enemiesGone(NumberOfEnemies, NumberOfEnemiesInRoom){
 		else if (NumberOfEnemies > 0){
 			console.log("Only " + NumberOfEnemies + " enemies remain.");
 		}
+
+		return NumberOfEnemies;
 }
 
 

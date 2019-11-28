@@ -54,28 +54,19 @@ function numberOfEnemies(){
 	console.log("There's " + numberOfEnemies + " enemies in the building, take care of them.");
 	return numberOfEnemies;
 }
-// numberOfEnemies();
-
-// function LetsPlay(){
-// 	numberOfEnemiesInRoom(); 
-// 	travelDirection();
-// 	situationDamage();
-// 	enemiesGone();
-// }
-
-// LetsPlay();
 
 //Begin match button is pressed
 
-function playingTheGame(){
+// function playingTheGame(){
 
-	for (let i = 0; numberOfEnemies < 0; i++){
-	travelDirection();
-	numberOfEnemiesInRoom();
-	situationDamage();
-	enemiesGone();
-	}
-}
+// 	for (let i = 0; numberOfEnemies > 0; i++){
+// 	travelDirection();
+// 	numberOfEnemiesInRoom();
+// 	situationDamage();
+// 	enemiesGone();
+// 	}
+// }
+// playingTheGame();
 
 function travelDirection(){
 	let travelDirection = prompt("Commander which direction do we go to first? left, foward or right")
@@ -128,4 +119,33 @@ function enemiesGone(){
 }
 
 
+function breachingLocation() {
 
+function initialBreach() {
+	let breachingLocation = prompt("Commander where do we begin basement, first floor, roof?");
+
+	switch(breachingLocation){
+	case "basement":
+		console.log("Roger, moving to basement");
+		break;
+	case "first floor":
+		console.log("Roger, moving to first floor");
+		break;
+	case "roof":
+		console.log("Roger, rapelling");
+		break;
+	default:
+		console.log("Commander we have to move ASAP!");
+		break;
+	}
+	if(breachingLocation == "basement"){
+		console.log("Breaching basement door in 3,2,1");
+	}
+	if(breachingLocation == "first floor"){
+			let breachLocal = prompt("Roger breaching main door in 3,2,1");
+	}
+	if(breachingLocation == "roof"){
+		console.log("Breaching roof hatch in 3,2,1");
+	}
+	return console.log("We're in.");
+}

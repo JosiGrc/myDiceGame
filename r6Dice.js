@@ -50,14 +50,14 @@ function weaponRoll(){
 }
 
 //Begin match button is pressed
-function playingTheGame(NumberOfEnemies){
+function playingTheGame(totalEnemies){
 
-		travelDirection();
-		numberOfEnemiesInRoom();
-		// situationDamage();
-		remainingEnemies();
+	travelDirection();
+	numberOfEnemiesInRoom();
+	// situationDamage();
+	remainingEnemies();
 
-		if (NumberOfEnemies > 0){
+		if (totalEnemies > 0){
 			playingTheGame();
 		}
 		else{
@@ -67,9 +67,9 @@ function playingTheGame(NumberOfEnemies){
 
 //PLayer rolls for number of enemies in the game
 function numberOfEnemies(){
-	var NumberOfEnemies = diceRoll(70);
-	console.log("There's " + NumberOfEnemies + " enemies in the building, take care of them.")
-	return NumberOfEnemies;//This variable becomes undefined after it falls out of the function
+	var totalEnemies = 70;
+	console.log("There's " + totalEnemies + " enemies in the building, take care of them.")
+	return totalEnemies;//This variable becomes undefined after it falls out of the function
 }
 
 
@@ -93,10 +93,10 @@ function travelDirection(){
 }
 
 
-function numberOfEnemiesInRoom(NumberOfEnemies){
-	let NumberOfEnemiesInRoom = diceRoll(NumberOfEnemies);
-	console.log("There's " + NumberOfEnemiesInRoom + " enemies in the room commander." );
-	return NumberOfEnemiesInRoom;
+function numberOfEnemiesInRoom(totalEnemies){
+	let enemiesInRoom = diceRoll(totalEnemies);
+	console.log("There's " + enemiesInRoom + " enemies in the room commander." );
+	return enemiesInRoom;
 }
 
 
@@ -115,17 +115,17 @@ function situationDamage(){
 }
 
 
-function remainingEnemies(NumberOfEnemies, NumberOfEnemiesInRoom){
+function remainingEnemies(totalEnemies, enemiesInRoom){
 
-		let RemainingEnemies = NumberOfEnemies- NumberOfEnemiesInRoom
-		if (NumberOfEnemies  == 0){
+		let enemiesLeft = totalEnemies- enemiesInRoom
+		if (totalEnemies  == 0){
 			console.log("It's a win, all enemies defeated");
 		}
-		else if (NumberOfEnemies > 0){
-			console.log("Only " + NumberOfEnemies + " enemies remain.");
+		else if (totalEnemies > 0){
+			console.log("Only " + totalEnemies + " enemies remain.");
 		}
 
-		return NumberOfEnemies;
+		return totalEnemies;
 }
 
 

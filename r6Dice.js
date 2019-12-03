@@ -56,7 +56,7 @@ function weaponRoll(){
 //PLayer rolls for number of enemies in the game
 
 function numberOfEnemies(){
-	let NumberOfEnemies = diceRoll(60);
+	let NumberOfEnemies = diceRoll(70);
 	console.log("There's " + NumberOfEnemies + " enemies in the building, take care of them.");
 	return NumberOfEnemies;
 }

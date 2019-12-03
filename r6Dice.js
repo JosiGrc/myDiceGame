@@ -13,8 +13,6 @@
 // while (enemies > 1){
 // 	numberOfEnemiesInRoom(); travelDirection(); situationDamage();   //the while loop 
 
-//Master Function
-
 $(document).ready(function(){
   $("p").click(function(){
     $(this).hide();
@@ -22,12 +20,10 @@ $(document).ready(function(){
 });
 
 
-
 function diceRoll(numberOfSides){
     let outcome = Math.floor(Math.random() * numberOfSides) + 1;
     return outcome;
 }
-
 
 //Player rolls for additional help
 function numberOfPlayers(){
@@ -53,16 +49,7 @@ function weaponRoll(){
 		}
 }
 
-//PLayer rolls for number of enemies in the game
-
-function numberOfEnemies(){
-	let NumberOfEnemies = diceRoll(70);
-	console.log("There's " + NumberOfEnemies + " enemies in the building, take care of them.");
-	return NumberOfEnemies;
-}
-
 //Begin match button is pressed
-
 function playingTheGame(NumberOfEnemies){
 
 		travelDirection();
@@ -77,6 +64,14 @@ function playingTheGame(NumberOfEnemies){
 			console.log("Congratulations you won.")
 		}	
 }
+
+//PLayer rolls for number of enemies in the game
+function numberOfEnemies(){
+	var NumberOfEnemies = diceRoll(70);
+	console.log("There's " + NumberOfEnemies + " enemies in the building, take care of them.")
+	return NumberOfEnemies;//This variable becomes undefined after it falls out of the function
+}
+
 
 function travelDirection(){
 	let travelDirection = prompt("Commander which direction do we go to first? left, foward or right")
@@ -122,7 +117,7 @@ function situationDamage(){
 
 function remainingEnemies(NumberOfEnemies, NumberOfEnemiesInRoom){
 
-		NumberOfEnemies = NumberOfEnemies- NumberOfEnemiesInRoom
+		let RemainingEnemies = NumberOfEnemies- NumberOfEnemiesInRoom
 		if (NumberOfEnemies  == 0){
 			console.log("It's a win, all enemies defeated");
 		}

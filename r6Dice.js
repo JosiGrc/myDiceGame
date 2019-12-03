@@ -23,18 +23,22 @@ $(document).ready(function(){
 
 
 
+function diceRoll(numberOfSides){
+    let outcome = Math.floor(Math.random() * numberOfSides) + 1;
+    return outcome;
+}
+
 
 //Player rolls for additional help
 function numberOfPlayers(){
-	let NumberOfPlayers = Math.floor(Math.random() * 6) + 0;
+	let NumberOfPlayers = diceRoll(6);
 	console.log( NumberOfPlayers + " players are helping you out in this mission");						  
 }
-// numberOfPlayers();
 
 //PLayer rolls for weapon
 function weaponRoll(){
 	let weapons = ["Shotgun","SMG","LMG","Assault Rifle"];
-	let weaponRoll = Math.floor(Math.random() * 4) + 0;
+	let weaponRoll = diceRoll(3);
 		if (weaponRoll === 0){
 			console.log("Ah yes the shotgun, trusty in this situation.");
 		}
@@ -52,7 +56,7 @@ function weaponRoll(){
 //PLayer rolls for number of enemies in the game
 
 function numberOfEnemies(){
-	let NumberOfEnemies = Math.floor(Math.random() * 60) + 1; 
+	let NumberOfEnemies = diceRoll(60);
 	console.log("There's " + NumberOfEnemies + " enemies in the building, take care of them.");
 	return NumberOfEnemies;
 }
@@ -71,8 +75,7 @@ function playingTheGame(NumberOfEnemies){
 		}
 		else{
 			console.log("Congratulations you won.")
-		}
-	
+		}	
 }
 
 function travelDirection(){
@@ -95,8 +98,8 @@ function travelDirection(){
 }
 
 
-function numberOfEnemiesInRoom(){
-	let NumberOfEnemiesInRoom = Math.floor(Math.random() * 10) + 1;
+function numberOfEnemiesInRoom(NumberOfEnemies){
+	let NumberOfEnemiesInRoom = diceRoll(NumberOfEnemies);
 	console.log("There's " + NumberOfEnemiesInRoom + " enemies in the room commander." );
 	return NumberOfEnemiesInRoom;
 }
@@ -104,8 +107,8 @@ function numberOfEnemiesInRoom(){
 
 function situationDamage(){
 	let situationApproach = prompt("How should be elimatge the enemies, sneaky beaky like or guns blazing?")
-	let stealthDamageTaken = Math.floor(Math.random() * 50) + 0;
-	let nonStealthDamage = Math.floor(Math.random() * 100) + 0;
+	let stealthDamageTaken = diceRoll(50);
+	let nonStealthDamage = diceRoll(100);
 	
 		if(situationApproach == "sneaky beaky like"){
 			console.log("Enemies eliminated at the cost of " + stealthDamageTaken + " damage")
@@ -159,8 +162,6 @@ function initialBreach() {
 	}
 	return console.log("We're in.");
 }
-
-
 
 
 
